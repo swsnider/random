@@ -2,18 +2,18 @@
 <html>
 <head>
 <title>SWFUpload Demos - Simple Demo</title>
-<link href="default.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="swfupload.js"></script>
-<script type="text/javascript" src="swfupload.queue.js"></script>
-<script type="text/javascript" src="fileprogress.js"></script>
-<script type="text/javascript" src="handlers.js"></script>
+<link href="swfupload/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="swfupload/swfupload.js"></script>
+<script type="text/javascript" src="swfupload/swfupload.queue.js"></script>
+<script type="text/javascript" src="swfupload/fileprogress.js"></script>
+<script type="text/javascript" src="swfupload/handlers.js"></script>
 <script type="text/javascript">
 		var swfu;
 
 		window.onload = function() {
 			var settings = {
-				flash_url : "swfupload.swf",
-				flash9_url : "swfupload_fp9.swf",
+				flash_url : "swfupload/swfupload.swf",
+				flash9_url : "swfupload/swfupload_fp9.swf",
 				upload_url: "upload.php",
 				post_params: {"PHPSESSID" : "<?php echo session_id(); ?>"},
 				file_size_limit : "1000 MB",
