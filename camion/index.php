@@ -3,8 +3,8 @@
 <head>
 <title>SWFUpload Demos - Simple Demo</title>
 <link href="default.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="swfupload/swfupload.js"></script>
-<script type="text/javascript" src="swfupload/swfupload.queue.js"></script>
+<script type="text/javascript" src="swfupload.js"></script>
+<script type="text/javascript" src="swfupload.queue.js"></script>
 <script type="text/javascript" src="fileprogress.js"></script>
 <script type="text/javascript" src="handlers.js"></script>
 <script type="text/javascript">
