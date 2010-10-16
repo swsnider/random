@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SWFUpload Demos - Simple Demo</title>
+<title>Cami&oacute;n</title>
 <link href="swfupload/default.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="swfupload/swfupload.js"></script>
 <script type="text/javascript" src="swfupload/swfupload.queue.js"></script>
@@ -58,7 +58,7 @@
 <body>
 
 <div id="content">
-	<h2>Simple Demo</h2>
+	<h2>Cami&oacute;n</h2>
 	<form id="form1" action="index.php" method="post" enctype="multipart/form-data">
 		<p>This page demonstrates a simple usage of SWFUpload.  It uses the Queue Plugin to simplify uploading or cancelling all queued files.</p>
 
