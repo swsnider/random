@@ -28,7 +28,7 @@
 				debug: false,
 
 				// Button settings
-				button_image_url: "button.png",
+				button_image_url: "swfupload/button.png",
 				button_width: "65",
 				button_height: "29",
 				button_placeholder_id: "spanButtonPlaceHolder",
