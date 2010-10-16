@@ -32,7 +32,7 @@
 				button_width: "65",
 				button_height: "29",
 				button_placeholder_id: "spanButtonPlaceHolder",
-				button_text: '<span class="theFont">Hello</span>',
+				button_text: '<span class="theFont">Upload</span>',
 				button_text_style: ".theFont { font-size: 16; }",
 				button_text_left_padding: 12,
 				button_text_top_padding: 3,
@@ -60,7 +60,7 @@
 <div id="content">
 	<h2>Cami&oacute;n</h2>
 	<form id="form1" action="index.php" method="post" enctype="multipart/form-data">
-		<p>This page demonstrates a simple usage of SWFUpload.  It uses the Queue Plugin to simplify uploading or cancelling all queued files.</p>
+		<p>This page allows you to upload files to Bridge Fusion's servers.</p>
 
 			<div class="fieldset flash" id="fsUploadProgress">
 			<span class="legend">Upload Queue</span>
