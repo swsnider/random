@@ -4,7 +4,11 @@
 <html>
   <head>
     <title>Camion</title>
+    <link href="default.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="swfupload.js"></script>
+    <script type="text/javascript" src="swfupload.queue.js"></script>
+    <script type="text/javascript" src="fileprogress.js"></script>
+    <script type="text/javascript" src="handlers.js"></script>
     <script type="text/javascript">
       var swfu;
       window.onload = function() {
@@ -21,6 +25,18 @@
   				button_text_style: ".theFont { font-size: 16; }",
   				button_text_left_padding: 12,
   				button_text_top_padding: 3,
+  				// The event handler functions are defined in handlers.js
+  				swfupload_preload_handler : preLoad,
+  				swfupload_load_failed_handler : loadFailed,
+  				file_queued_handler : fileQueued,
+  				file_queue_error_handler : fileQueueError,
+  				file_dialog_complete_handler : fileDialogComplete,
+  				upload_start_handler : uploadStart,
+  				upload_progress_handler : uploadProgress,
+  				upload_error_handler : uploadError,
+  				upload_success_handler : uploadSuccess,
+  				upload_complete_handler : uploadComplete,
+  				queue_complete_handler : queueComplete	// Queue plugin event
         });
       }
     </script>
@@ -28,7 +44,7 @@
   <body>
     <div id="content">
       <h2>Camion</h2>
-      <form>
+      <form action="index.php" method="post" enctype="multipart/form-data">
         <div class="fieldset flash" id="fsUploadProgress">
           <span class="legend">Upload Queue</span>
         </div>
