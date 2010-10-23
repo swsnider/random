@@ -19,7 +19,7 @@
   </head>
   <body>
     <div id="content">
-      <h2>Login to <?= COMPANY_NAME ?>'s Cami&oacute;n</h2>
+      <h2>Login to <?= COMPANY_NAME ?>'s Cami&oacute;n</h2><br />
       <form action="" method="POST">
         <table>
           <tr><td>Username: </td><td><input type="text" name="username" /></td></tr>
