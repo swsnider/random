@@ -28,7 +28,7 @@
     if(!$dir_list){
       exit(0);
     }
-    $c = COMPANY_NAME
+    $c = COMPANY_NAME;
     echo "<h3>Provided by $c to you:</h3>\n";
     echo "<ul>\n";
     foreach ($dir_list as $value){
