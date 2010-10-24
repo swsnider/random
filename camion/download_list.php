@@ -12,7 +12,7 @@
         continue;
       }
       if ($u == '.' || $u == '..') continue;
-      echo "<li><h4>User: $u</h4>"
+      echo "<li><h4>User: $u</h4>";
       echo "<ul>";
       foreach ($files as $f){
         if ($f != '.' && $f != '..'){
