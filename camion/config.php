@@ -8,4 +8,4 @@
   
   $ADMINS = array(
     'adminuser'
-  )
+  );
