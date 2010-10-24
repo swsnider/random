@@ -5,7 +5,7 @@
     exit(0);
   }
   header('Content-Type: application/octet-stream');
-  header('Content-Disposition: attachment; filename=$file;');
+  header("Content-Disposition: attachment; filename=$file;");
   $type = $_GET['type'];
   $file = $_GET['file'];
   if ($type == 'user'){
