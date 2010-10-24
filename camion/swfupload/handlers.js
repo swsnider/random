@@ -96,6 +96,21 @@ function uploadStart(file) {
 	return true;
 }
 
+function adminUploadStart(file) {
+	try {
+	  this.addFileParam(file.id, user, $('#user_select').val());
+		/* It's important to update the UI here because in Linux no uploadProgress events are called. The best
+		we can do is say we are uploading.
+		 */
+		var progress = new FileProgress(file, this.customSettings.progressTarget);
+		progress.setStatus("Uploading...");
+		progress.toggleCancel(true, this);
+	}
+	catch (ex) {}
+	
+	return true;
+}
+
 function uploadProgress(file, bytesLoaded, bytesTotal) {
 	try {
 		var percent = Math.ceil((bytesLoaded / bytesTotal) * 100);
@@ -183,10 +198,17 @@ function queueComplete(numFilesUploaded) {
 	var status = document.getElementById("divStatus");
 	status.innerHTML = numFilesUploaded + " file" + (numFilesUploaded === 1 ? "" : "s") + " uploaded.";
 	fetchUploaded();
+	fetchDownload();
 }
 
 function fetchUploaded(){
   $.get('uploaded_list.php', function(data){
     $('#uploaded_list').html(data);
   });
+}
+
+function fetchDownload(){
+  $.get('download_list.php', function(data){
+    $('#download_list').html(data);
+  }); 
 }

@@ -14,6 +14,11 @@
   }
   $user = $_SESSION['username'];
 
+  if (isset($_SESSION['admin_user']) && $_SESSION['admin_user'])
+    $admin = true;
+  else
+    $admin = false;
+
   // Check post_max_size (http://us3.php.net/manual/en/features.file-upload.php#73762)
 	$POST_MAX_SIZE = ini_get('post_max_size');
 	$unit = strtoupper(substr($POST_MAX_SIZE, -1));
@@ -27,6 +32,9 @@
 
 	$upload_name = "Filedata";
 	$save_path = UPLOAD_BASE . $user . '/';
+	if ($admin && isset($_REQUEST['user'])){
+    $save_path = DOWNLOAD_BASE . $_REQUEST['user'] . '/';
+  }
 	
   if (!file_exists($save_path)){
     if(!mkdir($save_path, 0770, true)){

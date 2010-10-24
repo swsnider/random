@@ -1,13 +1,13 @@
 <?php
   require_once('security.php');
   if ($admin){
-    $user_list = scandir(UPLOAD_BASE);
+    $user_list = scandir(DOWNLOAD_BASE);
     if(!$user_list){
       exit(0);
     }
-    echo "<h3>Files uploaded by users:</h3><ul>";
+    echo "<h3>Files that you've provided:</h3><ul>";
     foreach ($user_list as $u){
-      $files = scandir(UPLOAD_BASE . $u);
+      $files = scandir(DOWNLOAD_BASE . $u);
       if (!$files){
         continue;
       }
@@ -16,7 +16,7 @@
       echo "<ul>";
       foreach ($files as $f){
         if ($f != '.' && $f != '..'){
-          ?>  <li><a href="admin_download_file.php?type=user&amp;file=<?= $f ?>&amp;user=<?= $u ?>"><?= $f ?></a></li>
+          ?>  <li><a href="admin_download_file.php?type=company&amp;file=<?= $f ?>&amp;user=<?= $u ?>"><?= $f ?></a></li>
           <?php
         }
       }
@@ -24,11 +24,12 @@
     }
     echo "</ul>";
   }else{
-    $dir_list = scandir(UPLOAD_BASE . $user);
+    $dir_list = scandir(DOWNLOAD_BASE . $user);
     if(!$dir_list){
       exit(0);
     }
-    echo "<h3>Already uploaded by you:</h3>\n";
+    $c = COMPANY_NAME
+    echo "<h3>Provided by $c to you:</h3>\n";
     echo "<ul>\n";
     foreach ($dir_list as $value){
       if ($value != '.' && $value != '..'){

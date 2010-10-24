@@ -1,14 +1,10 @@
 <?php
   require_once('security.php');
-  if ($admin){
-    header('Location: admin.php');
-    exit(0);
-  }
 ?>
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Cami&oacute;n</title>
+    <title>Admin Cami&oacute;n</title>
     <link href="swfupload/default.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
     <script type="text/javascript" src="swfupload/swfupload.js"></script>
@@ -51,7 +47,7 @@
   				file_queued_handler : fileQueued,
   				file_queue_error_handler : fileQueueError,
   				file_dialog_complete_handler : fileDialogComplete,
-  				upload_start_handler : uploadStart,
+  				upload_start_handler : adminUploadStart,
   				upload_progress_handler : uploadProgress,
   				upload_error_handler : uploadError,
   				upload_success_handler : uploadSuccess,
@@ -68,9 +64,9 @@
   </head>
   <body>
   <div id="content">
-  	<h2>Cami&oacute;n (User: <?= $user ?>)</h2>
+  	<h2>Cami&oacute;n (Admin)</h2>
   	<form id="form1" action="index.php" method="post" enctype="multipart/form-data">
-  		<p>This page allows you to upload files to <?= COMPANY_NAME ?>'s servers.</p>
+  		<p>This page allows you to upload files so that they're available for a user.</p>
 
   			<div class="fieldset flash" id="fsUploadProgress">
   			<span class="legend">Upload Queue</span>
@@ -80,17 +76,20 @@
   				<span id="spanButtonPlaceHolder"></span>
   				<input id="btnCancel" type="button" value="Cancel All Uploads" onclick="swfu.cancelQueue();" disabled="disabled" style="margin-left: 2px; font-size: 8pt; height: 29px;" />
   			</div>
-
   	</form>
-  	<?php if ($admin): ?>
+  	<select id="user_select">
+  	  <?php foreach($USERS as $u => $k): ?>
+  	    <?php if ($u == $user): ?>
+  	      <option value="<?= $u ?>" selected="selected"><?= $u ?></option>
+  	    <?php else: ?>
+    	    <option value="<?= $u ?>"><?= $u ?></option>
+    	  <?php endif; ?>
+	    <?php endforeach;?>
+  	</select>
   	<br />
-  	<a href="admin.php">Upload to another user</a>
-  	<?php endif; ?>
-  	<br />
-  	<div id="download_list">
-	  </div>
-	  <br />
   	<div id="uploaded_list">
+	  </div>
+	  <div id="download_list">
 	  </div>
   </div>
   </body>
