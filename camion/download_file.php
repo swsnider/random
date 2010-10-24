@@ -4,10 +4,10 @@
     echo "Unable to find the requested file.";
     exit(0);
   }
-  header('Content-Type: application/octet-stream');
-  header("Content-Disposition: attachment; filename=$file;");
   $type = $_GET['type'];
   $file = $_GET['file'];
+  header('Content-Type: application/octet-stream');
+  header("Content-Disposition: attachment; filename=$file");
   if ($type == 'user'){
     $path = UPLOAD_BASE . $user . '/';
   }else{
