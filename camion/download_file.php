@@ -1,6 +1,6 @@
 <?php
   require_once('security.php');
-  if(!isset($_POST['type']) || !isset($_POST['file'])){
+  if(!isset($_GET['type']) || !isset($_GET['file'])){
     echo "Unable to find the requested file.";
     exit(0);
   }
