@@ -5,7 +5,7 @@
   if(!$dir_list){
     exit(0);
   }
-  echo "<h3>Already uploaded by you</h3>\n";
+  echo "<h3>Already uploaded by you:</h3>\n";
   echo "<ul>\n";
   foreach ($dir_list as $value){
     if ($value != '.' && $value != '..'){

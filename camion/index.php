@@ -79,7 +79,6 @@
   	</form>
   	<br />
   	<div id="uploaded_list">
-  	  
 	  </div>
   </div>
   </body>

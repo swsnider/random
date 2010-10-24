@@ -2,12 +2,22 @@
   require_once('config.php');
   session_start();
   if(isset($_POST['username']) && isset($_POST['password'])){
-    $password = $USERS[$_POST['username']];
-    if ($password == $_POST['password']){
+    if($ENABLE_GUEST && $_POST['username'] == 'guest'){
       $_SESSION['logged_in'] = TRUE;
       $_SESSION['username'] = $_POST['username'];
       header('Location: index.php');
-      die();
+      exit(0);
+    }
+    $user = strtolower($_POST['username']);
+    $password = $USERS[$user];
+    if ($password == $_POST['password']){
+      $_SESSION['logged_in'] = TRUE;
+      $_SESSION['username'] = $user;
+      if (in_array($user, $ADMINS)){
+        $_SESSION['admin_user'] = TRUE;
+      }
+      header('Location: index.php');
+      exit(0);
     }
   }
 ?>
