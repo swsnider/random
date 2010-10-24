@@ -6,6 +6,7 @@
   <head>
     <title>Cami&oacute;n</title>
     <link href="swfupload/default.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
     <script type="text/javascript" src="swfupload/swfupload.js"></script>
     <script type="text/javascript" src="swfupload/swfupload.queue.js"></script>
     <script type="text/javascript" src="swfupload/fileprogress.js"></script>
@@ -13,7 +14,7 @@
     <script type="text/javascript">
   		var swfu;
 
-  		window.onload = function() {
+  		$(document).ready(function() {
   			var settings = {
   				flash_url : "swfupload/swfupload.swf",
   				flash9_url : "swfupload/swfupload_fp9.swf",
@@ -55,7 +56,9 @@
   			};
 
   			swfu = new SWFUpload(settings);
-      };
+  			
+  			fetchUploaded();1
+      });
   	</script>
   </head>
   <body>
@@ -75,6 +78,10 @@
   			</div>
 
   	</form>
+  	<br />
+  	<div id="uploaded_list">
+  	  
+	  </div>
   </div>
   </body>
 </html>

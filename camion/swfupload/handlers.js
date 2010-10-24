@@ -182,4 +182,11 @@ function uploadComplete(file) {
 function queueComplete(numFilesUploaded) {
 	var status = document.getElementById("divStatus");
 	status.innerHTML = numFilesUploaded + " file" + (numFilesUploaded === 1 ? "" : "s") + " uploaded.";
+	fetchUploaded();
+}
+
+function fetchUploaded(){
+  $.get('uploaded_list.php', function(data){
+    $('#uploaded_list').html(data);
+  });
 }
