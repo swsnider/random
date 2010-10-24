@@ -1,5 +1,9 @@
 <?php
   require_once('security.php');
+  if (!$admin){
+    header('Location: index.php');
+    exit(0);
+  }
 ?>
 <!DOCTYPE html>
 <html>
