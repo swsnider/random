@@ -18,7 +18,7 @@ function preLoad() {
 	}
 }
 function loadFailed() {
-	alert("Something went wrong while loading SWFUpload. If this were a real application we'd clean up and then give you an alternative");
+	alert("Something went wrong while loading the page. Please refresh the page and try again.");
 }
 
 function fileQueued(file) {
@@ -84,9 +84,7 @@ function fileDialogComplete(numFilesSelected, numFilesQueued) {
 
 function uploadStart(file) {
 	try {
-		/* I don't want to do any file validation or anything,  I'll just update the UI and
-		return true to indicate that the upload should start.
-		It's important to update the UI here because in Linux no uploadProgress events are called. The best
+		/* It's important to update the UI here because in Linux no uploadProgress events are called. The best
 		we can do is say we are uploading.
 		 */
 		var progress = new FileProgress(file, this.customSettings.progressTarget);
