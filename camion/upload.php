@@ -26,7 +26,7 @@
 	}
 
 	$upload_name = "Filedata";
-	$save_path = UPLOAD_BASE . $user . '/'
+	$save_path = UPLOAD_BASE . $user . '/';
 	
   if (!file_exists($save_path)){
     if(!mkdir($save_path, 0770, true)){
