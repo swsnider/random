@@ -11,6 +11,7 @@
   }else{
     $path = DOWNLOAD_BASE . $user . '/';
   }
+  die($path.'#'.$file);
   $f = fopen($path . $file, 'r');
   while($line = fgets($f)){
     if($line === FALSE){
