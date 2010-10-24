@@ -62,7 +62,7 @@
   	</script>
   </head>
   <body>
-
+  Username: <?= $user ?>
   <div id="content">
   	<h2>Cami&oacute;n</h2>
   	<form id="form1" action="index.php" method="post" enctype="multipart/form-data">

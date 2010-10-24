@@ -5,4 +5,8 @@
     header('Location: login.php');
     die();
   }
+  if (isset($_SESSION['admin_user']) && $_SESSION['admin_user'])
+    $admin = true;
+  else
+    $admin = false;
   $user = $_SESSION['username'];
