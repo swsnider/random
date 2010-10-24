@@ -69,6 +69,7 @@
   <body>
   <div id="content">
   	<h2>Cami&oacute;n (Admin)</h2>
+  	<a href="logout.php">Logout</a>
   	<form id="form1" action="index.php" method="post" enctype="multipart/form-data">
   		<p>This page allows you to upload files so that they're available for a user.</p>
 
