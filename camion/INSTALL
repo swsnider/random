@@ -1,5 +1,7 @@
 Installing Camion:
 
+* Make sure that shorttags is On in your php.ini and that none of the directives regarding uploaded file size are what you want them to be.
+* If you changed php.ini, restart apache
 * Dump the files in this directory somewhere on your webserver's docroot.
 * Copy config.php.default to config.php and change the values in that file as noted.
 * ???
