@@ -83,6 +83,9 @@
   			</div>
   	</form>
   	<select id="user_select">
+  	  <?php if ($ENABLE_GUEST): ?>
+    	  <option value="guest">guest</option>
+  	  <?php endif; ?>
   	  <?php foreach($USERS as $u => $k): ?>
   	    <?php if ($u == $user): ?>
   	      <option value="<?= $u ?>" selected="selected"><?= $u ?></option>

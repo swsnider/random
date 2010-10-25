@@ -1,13 +1,21 @@
 <?php
+  //This should be the text string that is your organization's name.
   define('COMPANY_NAME', 'Bridge Fusion');
+  //Full path (with ending slash) to where user-uploaded files should reside.
+  //WARNING: Putting this anywhere servable by you webserver will expose you to inumerable security vulnerablities.
   define('UPLOAD_BASE', '/tmp/camion/');
+  //Full path (with ending slash) to where admin-uploaded files should reside.
+  //WARNING: Putting this anywhere servable by you webserver will expose you to inumerable security vulnerablities.
+  //WARNING: If this overlaps with the previous directory, you will be in a world of pain.
   define('DOWNLOAD_BASE', '/tmp/camion_download/');
+  //Should there be a guest account?
   $ENABLE_GUEST = true;
+  //List of all users => passwords
   $USERS = array(
     'username' => 'password',
     'adminuser' => 'password'
   );
-  
+  //Usernames that are admins. Can be empty.
   $ADMINS = array(
     'adminuser'
   );

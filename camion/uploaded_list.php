@@ -1,5 +1,8 @@
 <?php
   require_once('security.php');
+  if ($user == 'guest'){
+    exit(0);
+  }
   if ($admin){
     $user_list = scandir(UPLOAD_BASE);
     if(!$user_list){

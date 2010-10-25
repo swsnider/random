@@ -1,0 +1,6 @@
+Installing Camion:
+
+* Dump the files in this directory somewhere on your webserver's docroot.
+* Copy config.php.default to config.php and change the values in that file as noted.
+* ???
+* Profit!!
