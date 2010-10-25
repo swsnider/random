@@ -33,7 +33,7 @@
     echo "<ul>\n";
     foreach ($dir_list as $value){
       if ($value != '.' && $value != '..'){
-        ?>  <li><a href="download_file.php?type=user&amp;file=<?= $value ?>"><?= $value ?></a></li>
+        ?>  <li><a href="download_file.php?type=company&amp;file=<?= $value ?>"><?= $value ?></a></li>
         <?php
       }
     }
