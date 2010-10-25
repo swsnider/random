@@ -98,7 +98,7 @@ function uploadStart(file) {
 
 function adminUploadStart(file) {
 	try {
-	  this.addFileParam(file.id, user, $('#user_select').val());
+	  this.addFileParam(file.id, 'user', $('#user_select').val());
 		/* It's important to update the UI here because in Linux no uploadProgress events are called. The best
 		we can do is say we are uploading.
 		 */
