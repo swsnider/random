@@ -9,15 +9,17 @@
       exit(0);
     }
     $user = strtolower($_POST['username']);
-    $password = $USERS[$user];
-    if ($password == $_POST['password']){
-      $_SESSION['logged_in'] = TRUE;
-      $_SESSION['username'] = $user;
-      if (in_array($user, $ADMINS)){
-        $_SESSION['admin_user'] = TRUE;
+    if (in_array($user, $USERS)){
+      $password = $USERS[$user];
+      if ($password == $_POST['password']){
+        $_SESSION['logged_in'] = TRUE;
+        $_SESSION['username'] = $user;
+        if (in_array($user, $ADMINS)){
+          $_SESSION['admin_user'] = TRUE;
+        }
+        header('Location: index.php');
+        exit(0);
       }
-      header('Location: index.php');
-      exit(0);
     }
   }
 ?>
