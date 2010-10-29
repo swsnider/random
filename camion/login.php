@@ -9,7 +9,7 @@
       exit(0);
     }
     $user = strtolower($_POST['username']);
-    if (in_array($user, $USERS)){
+    if (array_key_exists($user, $USERS)){
       $password = $USERS[$user];
       if ($password == $_POST['password']){
         $_SESSION['logged_in'] = TRUE;
